@@ -9,6 +9,18 @@
             <directory>tests/Unit</directory>
         </testsuite>
     </testsuites>
+    <coverage proccessUncoveredFiles="true">
+        <include>
+            <directory>app</directory>
+        </include>
+        <exclude>
+            <directory>app/Console</directory>
+            <directory>app/Exceptions</directory>
+            <directory>app/Http</directory>
+            <directory>app/Providers</directory>
+            <file>app/Models/User.php</file>
+        </exclude>
+    </coverage>
     <source>
         <include>
             <directory>app</directory>
@@ -27,4 +39,7 @@
         <env name="SESSION_DRIVER" value="array"/>
         <env name="TELESCOPE_ENABLED" value="false"/>
     </php>
+    <logging>
+        <log type="coverage-clover" target="coverage.xml"/>
+    </logging>
 </phpunit>
